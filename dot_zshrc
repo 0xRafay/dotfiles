@@ -162,6 +162,8 @@ alias tree='eza --tree'
 alias ff='fastfetch'
 alias of='onefetch'
 
+alias vim='nvim'
+
 if [[ -n "$ZSH_DEBUGRC" ]]; then
   zprof
 fi

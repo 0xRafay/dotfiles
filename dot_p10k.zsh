@@ -39,13 +39,16 @@
 
   # Prompt colors.
   local grey='242'
-  local neongreen='#1BFA30'
   local red='#FF5C57'
   local yellow='#F3F99D'
   local blue='#57C7FF'
   local magenta='#FF6AC1'
   local cyan='#9AEDFE'
   local white='#F1F1F0'
+
+  local neongreen='#1BFA30'
+  local neonpink='#EC30FF'
+  local neonyellow='#FFF314'
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -123,9 +126,9 @@
   # Git Prompt
   typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=$neongreen
 
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=$magenta
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=$neonpink
 
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=$yellow
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=$neonyellow
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.

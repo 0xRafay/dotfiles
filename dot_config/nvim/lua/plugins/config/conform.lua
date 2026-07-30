@@ -9,6 +9,9 @@ conform.setup({
     lua = { 'stylua' },
     c = { 'clang-format' },
     cpp = { 'clang-format' },
+    javascript = { 'prettierd', 'prettier' },
+    html = { 'prettierd', 'prettier' },
+    css = { 'prettierd', 'prettier' },
   },
   formatters = {
     stylua = {

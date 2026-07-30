@@ -59,4 +59,5 @@ require('plugins.config.ccc')
 
 -- The order here is important:
 require('plugins.config.mason')
+require('plugins.config.mason-lsp')
 require('plugins.config.lsp')

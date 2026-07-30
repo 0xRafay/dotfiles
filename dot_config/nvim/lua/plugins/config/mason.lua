@@ -15,6 +15,11 @@ vim.list_extend(ensure_installed, {
   'clang-format',
 
   'markdownlint',
+
+  'prettier',
+  'prettierd',
+  'html-lsp',
+  'cssls',
 })
 
 installer.setup({

@@ -17,8 +17,6 @@ vim.list_extend(ensure_installed, {
   'jdtls',
   'google-java-format',
 
-  'markdownlint',
-
   'prettier',
   'prettierd',
   'html-lsp',

@@ -4,7 +4,6 @@ if not ok then
 end
 
 lint.linters_by_ft = {
-  markdown = { 'markdownlint' },
 }
 
 -- Trigger linting automatically on save/enter

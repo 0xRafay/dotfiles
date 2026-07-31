@@ -41,6 +41,11 @@ vim.pack.add({
   },
 })
 
+-- Java
+vim.pack.add({
+  'https://codeberg.org/mfussenegger/nvim-jdtls.git',
+})
+
 -- AutoPairs
 vim.pack.add({ gh('windwp/nvim-autopairs') })
 
@@ -56,6 +61,7 @@ require('plugins.config.luasnip')
 require('plugins.config.blink')
 require('plugins.config.autopairs')
 require('plugins.config.ccc')
+require('plugins.config.jdtls')
 
 -- The order here is important:
 require('plugins.config.mason')

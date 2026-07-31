@@ -14,6 +14,9 @@ vim.list_extend(ensure_installed, {
   'stylua',
   'clang-format',
 
+  'jdtls',
+  'google-java-format',
+
   'markdownlint',
 
   'prettier',

@@ -17,6 +17,8 @@ vim.list_extend(ensure_installed, {
   'jdtls',
   'google-java-format',
 
+  'omnisharp',
+
   'prettier',
   'prettierd',
   'html-lsp',

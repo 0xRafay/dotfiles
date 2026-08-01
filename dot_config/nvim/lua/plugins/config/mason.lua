@@ -19,6 +19,8 @@ vim.list_extend(ensure_installed, {
 
   'omnisharp',
 
+  'bash-language-server',
+
   'prettier',
   'prettierd',
   'html-lsp',

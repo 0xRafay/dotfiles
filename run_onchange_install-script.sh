@@ -149,6 +149,7 @@ EOF
             rustup \
             java-jdk \
             java-devel \
+            dotnet-sdk-10.0 \
             librewolf \
             bibata-cursor-themes
     {{ end }}

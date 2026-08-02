@@ -144,6 +144,7 @@ client.background       #ffffff
 
     # Clipboard
     bindsym $mod+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+    bindsym $mod+Shift+v exec 'printf "Yes\nNo" | rofi -dmenu -p "Wipe clipboard history?" -lines 2 -no-custom -i | grep -qi "yes" && cliphist wipe'
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

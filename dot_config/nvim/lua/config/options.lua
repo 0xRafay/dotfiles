@@ -4,7 +4,7 @@ local opt = vim.opt
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
-opt.guicursor = 'n-v-i-c:block-Cursor'
+opt.guicursor = { 'a:block' }
 
 opt.tabstop = 4
 opt.shiftwidth = 4

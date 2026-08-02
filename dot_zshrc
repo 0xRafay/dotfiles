@@ -78,6 +78,8 @@ zstyle ':fzf-tab:*' fzf-flags \
 export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 export ZVM_OPEN_URL_CMD='xdg-open'
 
+export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+
 # EXPORTS!!
 
 # This has caused me an entire days worth of headaches

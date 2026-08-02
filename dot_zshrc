@@ -30,8 +30,9 @@ zi for \
 # Load plugins with zinit
 zinit ice depth=1
 
-zinit light romkatv/powerlevel10k
 zinit light jeffreytse/zsh-vi-mode
+
+zinit light romkatv/powerlevel10k
 
 zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
@@ -42,7 +43,6 @@ zinit light Aloxaf/fzf-tab
 
 zinit wait lucid for \
   OMZ::plugins/git/git.plugin.zsh \
-  OMZ::plugins/sudo/sudo.plugin.zsh \
   OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
   OMZ::plugins/zoxide/zoxide.plugin.zsh
 
@@ -85,10 +85,11 @@ export GPG_TTY=$(tty)
 
 export EDITOR="nvim"
 
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+
 export DEFAULT_TARGET_DIR=~/Screenshots
 
 # Cargo Setup
-
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # XDG setup
@@ -121,7 +122,7 @@ unsetopt HIST_FIND_NO_DUPS
 unsetopt HIST_IGNORE_ALL_DUPS
 unsetopt HIST_SAVE_NO_DUPS
 
-bindkey -e
+bindkey -v
 # ===== KEYBINDINGS =====
 
 WORDCHARS=''

@@ -73,6 +73,11 @@ zstyle ':fzf-tab:*' fzf-flags \
 
 #zstyle ':fzf-tab:complete:*'
 
+# Zsh-Vi Mode
+
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+export ZVM_OPEN_URL_CMD='xdg-open'
+
 # EXPORTS!!
 
 # This has caused me an entire days worth of headaches
@@ -84,9 +89,6 @@ export PAGER=less # sets $PAGER value
 export GPG_TTY=$(tty)
 
 export EDITOR="nvim"
-
-export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
-export ZVM_OPEN_URL_CMD='xdg-open'
 
 export DEFAULT_TARGET_DIR=~/Screenshots
 

@@ -86,6 +86,7 @@ export GPG_TTY=$(tty)
 export EDITOR="nvim"
 
 export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+export ZVM_OPEN_URL_CMD='xdg-open'
 
 export DEFAULT_TARGET_DIR=~/Screenshots
 

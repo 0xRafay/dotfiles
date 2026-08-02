@@ -1,5 +1,3 @@
----Because most plugins are hosted on GitHub, you can use the helper
----function to have less repetition in the following sections.
 ---@param repo string
 ---@return string
 local function gh(repo)
@@ -22,6 +20,11 @@ vim.pack.add({ gh('nvim-lualine/lualine.nvim') })
 
 -- Lint
 vim.pack.add({ gh('mfussenegger/nvim-lint') })
+
+-- Indent Lines
+vim.pack.add({
+  gh('lukas-reineke/indent-blankline.nvim'),
+})
 
 -- Lsp, Mason & Friends
 vim.pack.add({
@@ -61,6 +64,7 @@ require('plugins.config.lint')
 require('plugins.config.conform')
 require('plugins.config.luasnip')
 require('plugins.config.blink')
+require('plugins.config.blankline')
 require('plugins.config.autopairs')
 require('plugins.config.ccc')
 require('plugins.config.jdtls')

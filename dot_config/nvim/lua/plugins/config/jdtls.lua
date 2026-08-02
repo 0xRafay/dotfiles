@@ -5,13 +5,13 @@ local function setup_jdtls()
   local jdtls_path = mason_path .. '/packages/jdtls'
 
   local launcher_jar = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
+  -- Adjust 'config_linux' to 'config_mac' or 'config_win' if needed
   local config_path = jdtls_path .. '/config_linux'
 
   local root_markers = { '.git', 'mvnw', 'gradlew', 'pom.xml', 'build.gradle', '.project' }
   local root_dir = require('jdtls.setup').find_root(root_markers)
 
-  if root_dir == '' then
-    vim.notify('No Java project detected. jdtls not starting.', vim.log.levels.INFO)
+  if not root_dir or root_dir == '' then
     return
   end
 
@@ -43,64 +43,25 @@ local function setup_jdtls()
     root_dir = root_dir,
     capabilities = require('blink.cmp').get_lsp_capabilities(),
     on_attach = function(client, bufnr)
-      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { buffer = bufnr })
-      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr })
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
-      vim.keymap.set('n', '<leader>f', function()
+      local map = function(keys, func, desc)
+        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP: ' .. desc })
+      end
+      map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
+      map('<leader>rn', vim.lsp.buf.rename, 'Rename')
+      map('gd', vim.lsp.buf.definition, 'Go to Definition')
+      map('K', vim.lsp.buf.hover, 'Hover')
+      map('<leader>f', function()
         vim.lsp.buf.format({ async = true })
-      end, { buffer = bufnr })
+      end, 'Format')
+
+      -- adds :JdtCompile, :JdtOrganizeImports, etc.
       jdtls.setup.add_commands()
     end,
     settings = {
       java = {
-        configuration = {
-          updateBuildConfiguration = 'interactive',
-          checkProjectSettingsExclusions = true,
-        },
-        eclipse = {
-          preferences = {
-            'org.eclipse.jdt.core.projectNonJavaProjectSupport=true',
-            'org.eclipse.jdt.core.compiler.problem.unclosedCloseable=ignore',
-            'org.eclipse.jdt.core.compiler.problem.unusedWarningToken=ignore',
-            'org.eclipse.jdt.core.compiler.problem.missingJavadocComments=ignore',
-          },
-        },
-        sources = {
-          directories = {
-            'src/main/java',
-            'src',
-            '.',
-          },
-        },
-        format = {
-          enabled = true,
-          settings = {
-            profile = 'GoogleStyle',
-          },
-        },
-        runtime = {},
-        completion = {
-          favorites = {
-            'org.junit.jupiter.api.Assertions.*',
-            'org.mockito.Mockito.*',
-          },
-        },
-        codeGeneration = {
-          toString = {
-            template = '${object.className}{${member.name()}=${member.value}, ${otherMembers}}',
-          },
-        },
-        project = {
-          referencedLibraries = {},
-        },
-      },
-    },
-    init_options = {
-      bundles = {},
-      extendedClientCapabilities = {
-        progressReportProvider = true,
-        classFileContentsSupport = true,
+        configuration = { updateBuildConfiguration = 'interactive' },
+        format = { enabled = true, settings = { profile = 'GoogleStyle' } },
+        completion = { favorites = { 'org.junit.jupiter.api.Assertions.*', 'org.mockito.Mockito.*' } },
       },
     },
   }
@@ -111,6 +72,18 @@ end
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'java',
   callback = function()
+    -- prevenets filetype fires multiple times rapidly
+    if vim.b.jdtls_setup_started then
+      return
+    end
+    vim.b.jdtls_setup_started = true
+
+    -- prevent attaching if jdtls is already active for this buffer
+    local clients = vim.lsp.get_clients({ bufnr = 0, name = 'jdtls' })
+    if #clients > 0 then
+      return
+    end
+
     setup_jdtls()
   end,
 })

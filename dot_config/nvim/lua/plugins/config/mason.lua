@@ -21,6 +21,8 @@ vim.list_extend(ensure_installed, {
 
   'bash-language-server',
 
+  'python-lsp-server',
+
   'prettier',
   'prettierd',
   'html-lsp',

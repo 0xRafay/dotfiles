@@ -12,6 +12,7 @@ conform.setup({
     javascript = { 'prettierd', 'prettier' },
     html = { 'prettierd', 'prettier' },
     css = { 'prettierd', 'prettier' },
+    java = { 'google-java-format' },
   },
   formatters = {
     stylua = {

@@ -4,8 +4,6 @@ local function gh(repo)
   return 'https://github.com/' .. repo
 end
 
-vim.pack.add({ gh('m4xshen/hardtime.nvim') })
-
 -- Colorschemes
 vim.pack.add({ gh('srcery-colors/srcery-vim') })
 
@@ -68,8 +66,6 @@ require('plugins.config.blankline')
 require('plugins.config.autopairs')
 require('plugins.config.ccc')
 require('plugins.config.jdtls')
-
-require('plugins.config.hardtime')
 
 -- The order here is important:
 require('plugins.config.mason')

@@ -6,7 +6,6 @@ if not ok then
 end
 
 blink.setup({
-  dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
   keymap = {
     -- 'default' (recommended) for mappings similar to built-in completions
     --   <c-y> to accept ([y]es) the completion.

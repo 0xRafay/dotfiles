@@ -1,9 +1,5 @@
 return {
-  'uga-rosa/ccc.nvim',
-  opts = {
-    highlighter = {
-      auto_enable = true,
-      lsp = true,
-    },
-  },
+  'catgoose/nvim-colorizer.lua',
+  event = 'BufReadPre',
+  opts = {},
 }

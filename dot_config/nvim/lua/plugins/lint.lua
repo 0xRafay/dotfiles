@@ -65,7 +65,6 @@ return {
       end,
     })
 
-    -- Keymaps using new API
     local map = vim.keymap.set
 
     map('n', '<leader>l', function()
@@ -76,7 +75,7 @@ return {
       vim.diagnostic.open_float()
     end, { desc = 'Show diagnostics' })
 
-    -- Jump to diagnostics (new API)
+    -- Jump to diagnostics
     map('n', ']d', function()
       vim.diagnostic.jump({ count = 1 })
     end, { desc = 'Next diagnostic' })

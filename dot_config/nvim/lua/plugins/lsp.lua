@@ -17,6 +17,7 @@ return {
         'ts_ls',
         'pyright',
         'rust_analyzer',
+        'jdtls',
       },
       automatic_installation = true,
       automatic_enable = {

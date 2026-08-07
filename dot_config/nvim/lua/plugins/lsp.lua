@@ -1,14 +1,15 @@
 return {
   'neovim/nvim-lspconfig',
-  dependencies = { 
+  event = "BufReadPre",
+  dependencies = {
     'saghen/blink.cmp',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
   },
-  
+
   config = function()
     local capabilities = require('blink.cmp').get_lsp_capabilities()
-    
+
     -- Setup Mason
     require('mason').setup()
     require('mason-lspconfig').setup({
@@ -21,7 +22,7 @@ return {
       },
       automatic_installation = true,
     })
-    
+
     require('mason-lspconfig').setup_handlers({
       -- The first entry (without a key) will be the default handler
       function(server)
@@ -30,7 +31,7 @@ return {
         })
         vim.lsp.enable(server)
       end,
-      
+
       -- Override specific servers
       ['lua_ls'] = function(server)
         vim.lsp.config(server, {

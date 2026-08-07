@@ -46,7 +46,12 @@ return {
       local root_dir = require('jdtls.setup').find_root(root_markers)
 
       if not root_dir or root_dir == '' then
-        return false
+        local current_file = vim.api.nvim_buf_get_name(0)
+        if current_file and current_file ~= '' then
+          root_dir = vim.fn.fnamemodify(current_file, ':h')
+        else
+          root_dir = vim.fn.getcwd()
+        end
       end
 
       local project_name = vim.fs.basename(root_dir)

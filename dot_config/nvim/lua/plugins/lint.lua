@@ -10,12 +10,12 @@ return {
 
     -- Configure diagnostics globally
     vim.diagnostic.config({
-      virtual_text = true,
+      virtual_text = false,
       signs = true,
       update_in_insert = false,
       severity_sort = true,
       float = {
-        border = 'rounded',
+        border = 'single',
         source = true,
       },
     })

@@ -78,23 +78,6 @@ return {
 
         capabilities = require('blink.cmp').get_lsp_capabilities(),
 
-        on_attach = function(client, bufnr)
-          local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = bufnr, desc = 'LSP: ' .. desc })
-          end
-
-          map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
-          map('<leader>rn', vim.lsp.buf.rename, 'Rename')
-          map('gd', vim.lsp.buf.definition, 'Go to Definition')
-          map('K', vim.lsp.buf.hover, 'Hover')
-
-          map('<leader>f', function()
-            vim.lsp.buf.format({ async = true })
-          end, 'Format')
-
-          require('jdtls.setup').add_commands()
-        end,
-
         settings = {
           java = {
             project = {

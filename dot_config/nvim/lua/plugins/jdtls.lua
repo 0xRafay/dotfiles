@@ -89,7 +89,7 @@ return {
             format = {
               enabled = true,
               settings = {
-                profile = 'GoogleStyle',
+                -- profile = 'GoogleStyle',
               },
             },
             completion = {

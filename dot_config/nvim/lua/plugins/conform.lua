@@ -25,6 +25,12 @@ return {
           '-',
         },
       },
+      ['google-java-format'] = {
+        args = {
+          '--aosp',
+          '-',
+        },
+      },
     },
     --[[
     format_on_save = {

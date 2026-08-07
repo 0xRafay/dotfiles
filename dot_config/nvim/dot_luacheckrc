@@ -1,0 +1,46 @@
+globals = {
+  "vim",
+  "_G",
+  "pcall",
+  "require",
+  "print",
+  "io",
+  "table",
+  "string",
+  "math",
+  "os",
+  "debug",
+  "coroutine",
+  "package",
+  "unpack",
+  "setmetatable",
+  "getmetatable",
+  "type",
+  "tostring",
+  "tonumber",
+  "rawget",
+  "rawset",
+  "rawequal",
+  "collectgarbage",
+  "gcinfo",
+  "xpcall",
+  "error",
+  "load",
+  "loadfile",
+  "loadstring",
+  "dofile",
+}
+
+-- Lua standard
+std = "lua51"
+
+ignore = {
+  "211",  -- unused variable
+  "212",  -- unused argument
+  "231",  -- unused loop variable
+}
+
+exclude_files = {
+  "lazy-lock.json",
+  ".git/",
+}

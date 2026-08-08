@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  event = {'BufReadPre', 'BufNewFile'},
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'saghen/blink.cmp',
     'williamboman/mason.nvim',
@@ -17,13 +17,10 @@ return {
         'ts_ls',
         'pyright',
         'rust_analyzer',
-        'jdtls',
       },
       automatic_installation = true,
       automatic_enable = {
-        exclude = {
-          'jdtls',
-        },
+        exclude = {},
       },
     })
 

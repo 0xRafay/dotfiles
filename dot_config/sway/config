@@ -142,6 +142,9 @@ client.background       #ffffff
     # Start your launcher
     bindsym $mod+r exec $menu
 
+    # Toggle Waybar
+    bindsym $mod+b exec $HOME/.config/sway/scripts/waybar.sh
+
     # Clipboard
     bindsym $mod+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
     bindsym $mod+Shift+v exec 'printf "Yes\nNo" | rofi -dmenu -p "Wipe clipboard history?" -lines 2 -no-custom -i | grep -qi "yes" && cliphist wipe'
@@ -215,7 +218,7 @@ client.background       #ffffff
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    #bindsym $mod+h splith
     #bindsym $mod+v splitv
 
     # Switch the current container between different layout styles

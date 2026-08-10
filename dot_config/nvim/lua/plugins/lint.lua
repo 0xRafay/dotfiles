@@ -9,7 +9,6 @@ return {
   config = function()
     local lint = require('lint')
 
-    -- Configure diagnostics globally
     vim.diagnostic.config({
       virtual_text = false,
       signs = true,
@@ -21,13 +20,12 @@ return {
       },
     })
 
-    -- Configure linters
     lint.linters_by_ft = {
       javascript = { 'eslint_d' },
       typescript = { 'eslint_d' },
       javascriptreact = { 'eslint_d' },
       typescriptreact = { 'eslint_d' },
-      python = { 'pylint' },
+      python = { 'ruff' },
       lua = { 'luacheck' },
       sh = { 'shellcheck' },
       bash = { 'shellcheck' },

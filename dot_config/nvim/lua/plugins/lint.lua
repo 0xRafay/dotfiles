@@ -36,7 +36,6 @@ return {
       yaml = { 'yamllint' },
     }
 
-    -- Get unique linters
     local seen = {}
     local unique_linters = {}
     for _, linters in pairs(lint.linters_by_ft) do
@@ -48,14 +47,12 @@ return {
       end
     end
 
-    -- Install linters
     require('mason-tool-installer').setup({
       ensure_installed = unique_linters,
       run_on_start = true,
       auto_update = true,
     })
 
-    -- Auto-lint
     vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufEnter', 'InsertLeave' }, {
       group = vim.api.nvim_create_augroup('Linting', { clear = true }),
       callback = function()
@@ -65,42 +62,5 @@ return {
         end
       end,
     })
-
-    local map = vim.keymap.set
-
-    map('n', '<leader>l', function()
-      pcall(lint.try_lint)
-    end, { desc = 'Lint file' })
-
-    map('n', '<leader>ld', function()
-      vim.diagnostic.open_float()
-    end, { desc = 'Show diagnostics' })
-
-    -- Jump to diagnostics
-    map('n', ']d', function()
-      vim.diagnostic.jump({ count = 1 })
-    end, { desc = 'Next diagnostic' })
-
-    map('n', '[d', function()
-      vim.diagnostic.jump({ count = -1 })
-    end, { desc = 'Previous diagnostic' })
-
-    -- Jump to warnings
-    map('n', ']w', function()
-      vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.WARN })
-    end, { desc = 'Next warning' })
-
-    map('n', '[w', function()
-      vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.WARN })
-    end, { desc = 'Previous warning' })
-
-    -- Jump to errors
-    map('n', ']e', function()
-      vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
-    end, { desc = 'Next error' })
-
-    map('n', '[e', function()
-      vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
-    end, { desc = 'Previous error' })
   end,
 }

@@ -1,32 +1,10 @@
 return {
-  'srcery-colors/srcery-vim',
-  lazy = false,
-  priority = 1000,
+  'olimorris/onedarkpro.nvim',
+  priority = 1000, -- Ensure it loads first
   config = function()
-    -- this has to be here, before the theme loads
-    local function set_theme_options()
-      vim.g.srcery_italic = 1
-      vim.g.srcery_bold = 1
-      vim.g.srcery_underline = 0
-      vim.g.srcery_inverse = 0
+    local function setup()
+      vim.cmd('colorscheme onedark_dark')
     end
-
-    set_theme_options()
-
-    local function set_theme_colors()
-      vim.g.srcery_black = '#0D0D0D'
-    end
-
-    set_theme_colors()
-
-    vim.cmd([[colorscheme srcery]])
-
-    local function set_highlight()
-      vim.api.nvim_set_hl(0, 'Search', { bg = '#FAD02C', fg = '#000000', bold = true })
-      vim.api.nvim_set_hl(0, 'CurSearch', { bg = '#FF5733', fg = '#FFFFFF', bold = true })
-      vim.api.nvim_set_hl(0, 'IncSearch', { bg = '#FF5733', fg = '#FFFFFF', bold = true })
-    end
-
-    set_highlight()
+    setup()
   end,
 }

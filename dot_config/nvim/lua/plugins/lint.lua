@@ -29,7 +29,7 @@ return {
       lua = { 'luacheck' },
       sh = { 'shellcheck' },
       bash = { 'shellcheck' },
-      markdown = { 'vale' },
+      markdown = { 'rumdl' },
       json = { 'jsonlint' },
       yaml = { 'yamllint' },
     }

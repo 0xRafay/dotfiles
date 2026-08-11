@@ -1,10 +1,13 @@
 return {
   'olimorris/onedarkpro.nvim',
-  priority = 1000, -- Ensure it loads first
+  priority = 1000,
   config = function()
-    local function setup()
-      vim.cmd('colorscheme onedark_dark')
-    end
-    setup()
+    require('onedarkpro').setup({
+      colors = {
+        onedark_dark = { bg = '#050505' },
+      },
+    })
+
+    vim.cmd('colorscheme onedark_dark')
   end,
 }

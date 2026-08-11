@@ -13,6 +13,12 @@ return {
 
     set_theme_options()
 
+    local function set_theme_colors()
+      vim.g.srcery_black = '#0D0D0D'
+    end
+
+    set_theme_colors()
+
     vim.cmd([[colorscheme srcery]])
 
     local function set_highlight()

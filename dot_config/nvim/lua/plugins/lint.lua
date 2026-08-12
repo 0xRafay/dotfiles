@@ -1,6 +1,6 @@
 return {
   'mfussenegger/nvim-lint',
-  event = 'BufReadPre',
+  event = { 'BufReadPost' },
   dependencies = {
     'williamboman/mason.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -47,8 +47,8 @@ return {
 
     require('mason-tool-installer').setup({
       ensure_installed = unique_linters,
-      run_on_start = true,
-      auto_update = true,
+      run_on_start = false,
+      auto_update = false,
     })
 
     vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufEnter', 'InsertLeave' }, {

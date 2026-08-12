@@ -1,6 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
-  event = { 'User FilePost' },
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'saghen/blink.cmp',
   },
@@ -25,7 +25,6 @@ return {
       end, opts('List workspace folders'))
 
       map('n', '<leader>D', vim.lsp.buf.type_definition, opts('Go to type definition'))
-      map('n', '<leader>ra', require('nvchad.lsp.renamer'), opts('NvRenamer'))
     end
 
     -- disable semanticTokens
@@ -68,26 +67,47 @@ return {
         end,
       })
 
-      local lua_lsp_settings = {
-        Lua = {
-          runtime = { version = 'LuaJIT' },
-          workspace = {
-            library = {
-              vim.fn.expand('$VIMRUNTIME/lua'),
-              vim.fn.stdpath('data') .. '/lazy/ui/nvchad_types',
-              vim.fn.stdpath('data') .. '/lazy/lazy.nvim/lua/lazy',
-              '${3rd}/luv/library',
-            },
-          },
-        },
+      local servers = {
+        'lua_ls',
+        'pyright',
+        'tsserver',
+        'rust_analyzer',
+        'clangd',
+        'jsonls',
       }
 
-      -- Use new vim.lsp.config API for Neovim 0.11+
-      vim.lsp.config('*', { capabilities = M.capabilities, on_init = M.on_init })
-      vim.lsp.config('lua_ls', { settings = lua_lsp_settings })
-      vim.lsp.enable('lua_ls')
-    end
+      for _, server in ipairs(servers) do
+        local config = {
+          capabilities = M.capabilities,
+          on_init = M.on_init,
+        }
 
-    return M
+        local lua_lsp_settings = {
+          Lua = {
+            diagnostics = { globals = { 'vim' } },
+            telemetry = { enable = false },
+            runtime = { version = 'LuaJIT' },
+            workspace = {
+              checkThirdParty = false,
+              library = {
+                vim.fn.expand('$VIMRUNTIME/lua'),
+                vim.fn.stdpath('data') .. '/lazy/ui/nvchad_types',
+                vim.fn.stdpath('data') .. '/lazy/lazy.nvim/lua/lazy',
+                '${3rd}/luv/library',
+              },
+            },
+          },
+        }
+        if server == 'lua_ls' then
+          config.settings = lua_lsp_settings
+        end
+
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
+      end
+
+      return M
+    end
+    M.defaults()
   end,
 }

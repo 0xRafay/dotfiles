@@ -1,6 +1,5 @@
 return {
   'mfussenegger/nvim-lint',
-  event = { 'BufReadPost' },
   dependencies = {
     'williamboman/mason.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',

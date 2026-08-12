@@ -1,8 +1,27 @@
+local servers = {
+  'lua_ls',
+  'clangd',
+  'ts_ls',
+  'pyright',
+  'rust_analyzer',
+}
+
 return {
+
+  {
+    'williamboman/mason-lspconfig.nvim',
+    dependencies = { 'williamboman/mason.nvim' },
+    event = { 'BufReadPre', 'BufNewFile' },
+    opts = {
+      ensure_installed = servers,
+      automatic_installation = true,
+    },
+  },
   'neovim/nvim-lspconfig',
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'saghen/blink.cmp',
+    'williamboman/mason-lspconfig.nvim',
   },
 
   config = function()
@@ -66,15 +85,6 @@ return {
           M.on_attach(_, args.buf)
         end,
       })
-
-      local servers = {
-        'lua_ls',
-        'pyright',
-        'tsserver',
-        'rust_analyzer',
-        'clangd',
-        'jsonls',
-      }
 
       for _, server in ipairs(servers) do
         local config = {

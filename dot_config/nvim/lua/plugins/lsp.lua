@@ -2,8 +2,9 @@ local servers = {
   'lua_ls',
   'clangd',
   'ts_ls',
-  'pyright',
+  'ruff',
   'rust_analyzer',
+  'bashls',
 }
 
 return {

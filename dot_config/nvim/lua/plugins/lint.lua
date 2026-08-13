@@ -50,7 +50,7 @@ return {
 
     require('mason-tool-installer').setup({
       ensure_installed = unique_linters,
-      run_on_start = false,
+      run_on_start = true,
       auto_update = false,
     })
 

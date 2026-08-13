@@ -1,6 +1,7 @@
 -- must install `shasum` package
 return {
   'idelice/nvim-jls',
+  ft = { 'java' },
   opts = {
     jls_dir = nil, -- defaults to managed install (~/.local/share/nvim/jls); set to override
     settings = {}, -- passed through to the JLS LSP settings payload

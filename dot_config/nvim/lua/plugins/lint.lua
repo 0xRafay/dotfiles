@@ -1,5 +1,9 @@
 return {
   'mfussenegger/nvim-lint',
+  event = { 'BufReadPre', 'BufEnter'},
+  cond = function()
+    return vim.fn.expand('%t') ~= '' and vim.bo.filetype == ''
+  end,
   dependencies = {
     'williamboman/mason.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',

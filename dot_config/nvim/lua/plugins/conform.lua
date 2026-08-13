@@ -1,9 +1,7 @@
 return {
   {
-    "williamboman/mason.nvim",
-    opts = {
-      PATH = "prepend",
-    },
+    'williamboman/mason.nvim',
+    opts = {},
   },
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -65,12 +63,10 @@ return {
     },
   },
     --]]
-
-      -- This will be called automatically with the opts table
-      config = function(_, opts)
-        require('conform').setup(opts)
-      end,
     },
+    config = function(_, opts)
+      require('conform').setup(opts)
+    end,
     keys = {
       {
         '<leader>FF',
@@ -80,5 +76,5 @@ return {
         desc = 'Format file (async)',
       },
     },
-  }
+  },
 }

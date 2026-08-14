@@ -5,6 +5,7 @@ local servers = {
   'ruff',
   'rust_analyzer',
   'bashls',
+  'jdtls',
 }
 
 return {

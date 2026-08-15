@@ -19,8 +19,7 @@ opt.signcolumn = 'yes'
 -- disable nvim intro
 opt.shortmess:append "sI"
 
-opt.updatetime = 500
--- vim.o.timeoutlen = 300
+opt.updatetime = 250
 
 -- keeping undo changes
 opt.undofile = true

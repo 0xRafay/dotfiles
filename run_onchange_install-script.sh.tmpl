@@ -21,50 +21,13 @@ print_error() {
 
 echo ""
 
-{{ if eq .chezmoi.os "linux" }}
-    
-    {{ if eq .chezmoi.osRelease.id "fedora" }}
+{{ if eq .chezmoi.os "linux" -}}
+    {{ if eq .chezmoi.osRelease.id "fedora" -}}
 
         print_message "Fedora Linux Detected!"
 
         sudo dnf clean all
-        sudo dnf install -y wayscriber
-        sudo dnf install -y wayscriber-configurator
 
-        sudo dnf install -y \
-            git \
-            git-crypt \
-            delta \
-            gnupg \
-            stow \
-	        nvim \
-            kitty \
-            zsh \
-            zoxide \
-            fzf \
-            yazi \
-            grim \
-            slurp \
-            satty \
-            cliphist \
-            poppler \
-            resvg \
-            fastfetch \
-            onefetch \
-            htop \
-            xz \
-            jq \
-            eza \
-            gcc \
-            gcc-c++ \
-            clang-tools-extra \
-            valgrind \
-            rustup \
-            java \
-            java-devel \
-            java-25-openjdk-src \
-            dotnet-sdk-10.0 \
-            librewolf \
-            bibata-cursor-themes
-    {{ end }}
-{{ end }}
+        sudo dnf install -y {{ range .packages.fedora.dnf }}{{ . }} {{ end }}
+    {{ end -}}
+{{ end -}}

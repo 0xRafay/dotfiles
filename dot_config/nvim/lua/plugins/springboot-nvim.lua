@@ -1,6 +1,6 @@
 return {
     "elmcgill/springboot-nvim",
-    event = { 'BufReadPre', 'BufNewFile' },
+    ft = 'java',
     dependencies = {
         "neovim/nvim-lspconfig",
         "mfussenegger/nvim-jdtls"

@@ -16,6 +16,9 @@ opt.smartcase = true
 opt.termguicolors = true
 opt.signcolumn = 'yes'
 
+-- disable nvim intro
+opt.shortmess:append "sI"
+
 opt.updatetime = 500
 -- vim.o.timeoutlen = 300
 

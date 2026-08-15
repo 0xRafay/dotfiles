@@ -11,3 +11,15 @@ return {
     vim.cmd('colorscheme onedark_dark')
   end,
 }
+--[[
+return {
+  "Shatur/neovim-ayu",
+  priority = 1000,
+  config = function()
+    require('ayu').setup({
+      terminal = false,
+    })
+    require('ayu').colorscheme()
+  end
+}
+--]]

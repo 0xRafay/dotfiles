@@ -1,13 +1,9 @@
 return {
   'mfussenegger/nvim-lint',
-  event = { 'BufReadPre', 'BufEnter'},
+  event = { 'BufEnter'},
   cond = function()
     return vim.fn.expand('%t') ~= '' and vim.bo.filetype == ''
   end,
-  dependencies = {
-    'williamboman/mason.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
-  },
 
   config = function()
     local lint = require('lint')
@@ -47,12 +43,6 @@ return {
         end
       end
     end
-
-    require('mason-tool-installer').setup({
-      ensure_installed = unique_linters,
-      run_on_start = true,
-      auto_update = false,
-    })
 
     vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufEnter', 'InsertLeave' }, {
       group = vim.api.nvim_create_augroup('Linting', { clear = true }),

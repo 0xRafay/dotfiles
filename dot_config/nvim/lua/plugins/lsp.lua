@@ -9,94 +9,78 @@ local servers = {
 }
 
 return {
-  {
-    'williamboman/mason-lspconfig.nvim',
-    dependencies = { 'williamboman/mason.nvim' },
-    opts = {
-      ensure_installed = servers,
-      automatic_installation = true,
-    },
-  },
+  'neovim/nvim-lspconfig',
+  event = { 'User FilePost' },
 
-  {
-    'neovim/nvim-lspconfig',
-    event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = {
-      'saghen/blink.cmp',
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-    },
+  config = function()
+    local M = {}
+    local map = vim.keymap.set
 
-    config = function()
-      local M = {}
-      local map = vim.keymap.set
-
-      M.on_attach = function(_, bufnr)
-        local function opts(desc)
-          return { buffer = bufnr, desc = 'LSP ' .. desc }
-        end
-
-        map('n', 'gD', vim.lsp.buf.declaration, opts('Go to declaration'))
-        map('n', 'gd', vim.lsp.buf.definition, opts('Go to definition'))
-        map('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts('Add workspace folder'))
-        map('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts('Remove workspace folder'))
-
-        map('n', '<leader>wl', function()
-          print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, opts('List workspace folders'))
-
-        map('n', '<leader>D', vim.lsp.buf.type_definition, opts('Go to type definition'))
+    M.on_attach = function(_, bufnr)
+      local function opts(desc)
+        return { buffer = bufnr, desc = 'LSP ' .. desc }
       end
 
-      M.on_init = function(client)
-        if client.server_capabilities and client.server_capabilities.semanticTokensProvider then
-          client.server_capabilities.semanticTokensProvider = nil
-        end
+      map('n', 'gD', vim.lsp.buf.declaration, opts('Go to declaration'))
+      map('n', 'gd', vim.lsp.buf.definition, opts('Go to definition'))
+      map('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts('Add workspace folder'))
+      map('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts('Remove workspace folder'))
+
+      map('n', '<leader>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end, opts('List workspace folders'))
+
+      map('n', '<leader>D', vim.lsp.buf.type_definition, opts('Go to type definition'))
+    end
+
+    M.on_init = function(client)
+      if client.server_capabilities and client.server_capabilities.semanticTokensProvider then
+        client.server_capabilities.semanticTokensProvider = nil
       end
+    end
 
-      local ok_blink, blink = pcall(require, 'blink.cmp')
-      M.capabilities = ok_blink and blink.get_lsp_capabilities() or vim.lsp.protocol.make_client_capabilities()
+    local ok_blink, blink = pcall(require, 'blink.cmp')
+    M.capabilities = ok_blink and blink.get_lsp_capabilities() or vim.lsp.protocol.make_client_capabilities()
 
-      M.defaults = function()
-        vim.api.nvim_create_autocmd('LspAttach', {
-          callback = function(args)
-            M.on_attach(nil, args.buf)
-          end,
-        })
+    M.defaults = function()
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          M.on_attach(nil, args.buf)
+        end,
+      })
 
-        for _, server in ipairs(servers) do
-          local config = {
-            capabilities = M.capabilities,
-            on_init = M.on_init,
-          }
+      for _, server in ipairs(servers) do
+        local config = {
+          capabilities = M.capabilities,
+          on_init = M.on_init,
+        }
 
-          if server == 'lua_ls' then
-            config.settings = {
-              Lua = {
-                diagnostics = { globals = { 'vim' } },
-                telemetry = { enable = false },
-                runtime = { version = 'LuaJIT' },
-                workspace = {
-                  checkThirdParty = false,
-                  library = {
-                    vim.fn.expand('$VIMRUNTIME/lua'),
-                    vim.fn.stdpath('data') .. '/lazy/ui/nvchad_types',
-                    vim.fn.stdpath('data') .. '/lazy/lazy.nvim/lua/lazy',
-                    '${3rd}/luv/library',
-                  },
+        if server == 'lua_ls' then
+          config.settings = {
+            Lua = {
+              diagnostics = { globals = { 'vim' } },
+              telemetry = { enable = false },
+              runtime = { version = 'LuaJIT' },
+              workspace = {
+                checkThirdParty = false,
+                library = {
+                  vim.fn.expand('$VIMRUNTIME/lua'),
+                  vim.fn.stdpath('data') .. '/lazy/ui/nvchad_types',
+                  vim.fn.stdpath('data') .. '/lazy/lazy.nvim/lua/lazy',
+                  '${3rd}/luv/library',
                 },
               },
-            }
-          end
-
-          vim.lsp.config(server, config)
-          vim.lsp.enable(server)
+            },
+          }
         end
 
-        return M
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
       end
 
-      M.defaults()
-    end,
-  },
+      return M
+    end
+
+    M.defaults()
+  end,
 }

@@ -98,6 +98,13 @@ export DEFAULT_TARGET_DIR=~/Screenshots
 # Cargo Setup
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Mise
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
+  elif [[ -x "$HOME/.local/bin/mise" ]]; then
+    eval "$($HOME/.local/bin/mise activate zsh)"
+fi
+
 # XDG setup
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -175,4 +182,3 @@ alias vim='nvim'
 if [[ -n "$ZSH_DEBUGRC" ]]; then
   zprof
 fi
-

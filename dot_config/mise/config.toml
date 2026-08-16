@@ -1,0 +1,7 @@
+[tools]
+eclipse-jdtls = "latest"
+lua-language-server = "latest"
+shellcheck = "latest"
+stylua = "latest"
+usage = "latest"
+yamllint = "latest"

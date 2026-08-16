@@ -1,5 +1,6 @@
 return {
   'nvim-java/nvim-java',
+  ft = { 'java' },
   dependencies = {
     'neovim/nvim-lspconfig',
     'MunifTanjim/nui.nvim',

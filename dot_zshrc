@@ -31,8 +31,6 @@ zi for \
 # Load plugins with zinit
 zinit ice depth=1
 
-zinit light jeffreytse/zsh-vi-mode
-
 zinit light romkatv/powerlevel10k
 
 zinit ice wait lucid atload'_zsh_autosuggest_start'
@@ -73,13 +71,6 @@ zstyle ':fzf-tab:*' fzf-flags \
 #--prompt='❯ '
 
 #zstyle ':fzf-tab:complete:*'
-
-# Zsh-Vi Mode
-
-export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
-export ZVM_OPEN_URL_CMD='xdg-open'
-
-export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 
 # EXPORTS!!
 

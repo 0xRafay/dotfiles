@@ -8,3 +8,5 @@ font-size = 16
 cursor-style = block
 
 window-inherit-working-directory = false
+
+keybind = ctrl+shift+t=unbind

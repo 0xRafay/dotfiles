@@ -1,4 +1,6 @@
 theme = onedark
 background = #000000
-font-family = "JetBrainsMono Nerd Font Mono"
+
+font-family = "JetBrains Mono"
+font-style = SemiBold
 font-size = 16

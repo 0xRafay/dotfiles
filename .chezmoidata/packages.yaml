@@ -9,6 +9,7 @@ packages:
       - 'stow'
       - 'nvim'
       - 'kitty'
+      - 'ghostty'
       - 'zsh'
       - 'zoxide'
       - 'fzf'

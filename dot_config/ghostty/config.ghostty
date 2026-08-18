@@ -4,3 +4,7 @@ background = #000000
 font-family = "JetBrains Mono"
 font-style = SemiBold
 font-size = 16
+
+cursor-style = block
+
+window-inherit-working-directory = false

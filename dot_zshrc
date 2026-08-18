@@ -45,8 +45,6 @@ zinit wait lucid for \
   OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
   OMZ::plugins/zoxide/zoxide.plugin.zsh
 
-zinit snippet 'https://raw.githubusercontent.com/wezterm/wezterm/refs/heads/main/assets/shell-integration/wezterm.sh'
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -144,16 +142,6 @@ bindkey "^H" backward-kill-word     # Ctrl+Backspace
 
 # Tab completion
 # bindkey '^I' complete-word          # Tab
-
-# Ensure emacs keybindings (disables vi-mode)
-
-# Kitty shell integration
-if test -n "$KITTY_INSTALLATION_DIR"; then
-  export KITTY_SHELL_INTEGRATION="no-rc no-cursor"
-  autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
-  kitty-integration
-  unfunction kitty-integration
-fi
 
 # Aliases
 alias ..='cd ..'

@@ -124,7 +124,7 @@ unsetopt HIST_FIND_NO_DUPS
 unsetopt HIST_IGNORE_ALL_DUPS
 unsetopt HIST_SAVE_NO_DUPS
 
-bindkey -v
+bindkey -e
 # ===== KEYBINDINGS =====
 
 WORDCHARS=''

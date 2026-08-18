@@ -1,5 +1,6 @@
 [tools]
 eclipse-jdtls = "latest"
+google-java-format = "latest"
 lua-language-server = "latest"
 shellcheck = "latest"
 stylua = "latest"

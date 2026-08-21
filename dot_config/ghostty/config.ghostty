@@ -9,6 +9,8 @@ font-size = 16
 cursor-style = block
 shell-integration-features = no-cursor
 
+mouse-hide-while-typing
+
 window-inherit-working-directory = false
 
 keybind = ctrl+shift+t=unbind

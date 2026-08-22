@@ -20,5 +20,5 @@
   "nvim-web-devicons": { "branch": "master", "commit": "2ae6958df7ced50baac5035cec0c15799eedfbf7" },
   "onedarkpro.nvim": { "branch": "main", "commit": "ef009ae60769935a4eced9b3d545ae6013d3d271" },
   "spring-boot.nvim": { "branch": "main", "commit": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" },
-  "vim-wakatime": { "branch": "master", "commit": "9f8a1d3b9c6f3a948988a0896b3227c1e1f74a58" }
+  "wakatime.nvim": { "branch": "master", "commit": "e1f5866619b33fa2c96c14bf692bd7462a95a2f7" }
 }

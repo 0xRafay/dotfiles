@@ -1,4 +1,7 @@
 return {
-  'wakatime/vim-wakatime',
+  "producdevity/wakatime.nvim",
   lazy = false,
+  opts = {
+    debug = false,
+  },
 }

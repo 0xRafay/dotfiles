@@ -40,9 +40,9 @@ echo ""
             sudo dnf copr enable peterwu/rendezvous -y
         fi
 
-        if ! dnf repolist --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' | grep -q "terra"; then
+        if [ ! -f /etc/yum.repos.d/terra.repo ] && [ ! -f /etc/yum.repos.d/terra-release.repo ]; then
             print_message "Adding Terra repository..."
-            sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release -y
+            sudo dnf install --nogpgcheck --repofrompath "terra,https://repos.fyralabs.com/terra$releasever" terra-release -y
         fi
 
         if ! dnf repolist | grep -qi "librewolf"; then

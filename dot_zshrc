@@ -87,6 +87,8 @@ export DEFAULT_TARGET_DIR=~/Screenshots
 # Cargo Setup
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Dotnet
+export PATH="$PATH:$HOME/.dotnet/tools"
 # Mise
 if command -v mise &> /dev/null; then
   eval "$(mise activate zsh)"

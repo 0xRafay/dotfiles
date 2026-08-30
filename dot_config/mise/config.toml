@@ -2,6 +2,7 @@
 eclipse-jdtls = "latest"
 google-java-format = "latest"
 lua-language-server = "latest"
+rumdl = "latest"
 shellcheck = "latest"
 stylua = "latest"
 usage = "latest"

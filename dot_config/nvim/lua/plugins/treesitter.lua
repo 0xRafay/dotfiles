@@ -11,6 +11,7 @@ return {
       'c',
       'cpp',
       'java',
+      'c_sharp',
       'lua',
       'luadoc',
       'rust',

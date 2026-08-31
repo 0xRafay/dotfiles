@@ -65,20 +65,25 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# EXPORTS!!
+
 # fzf-tab customization
 
-source <(fzf --zsh) # Shell Integration
-
-zstyle ':fzf-tab:*' fzf-flags \
+FZF_STYLE="\
 --color='fg:7,fg+:7,bg+:0,hl:9,hl+:2,pointer:2,border:4,info:2' \
 --info=right \
---border=none
+--border=none"
 #--pointer="> " \
 #--prompt='❯ '
 
-#zstyle ':fzf-tab:complete:*'
+export FZF_DEFAULT_OPTS="$FZF_STYLE"
+export FZF_CTRL_R_OPTS="$FZF_STYLE --height=40%"
 
-# EXPORTS!!
+source <(fzf --zsh) # Shell Integration
+
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+
+zstyle ':fzf-tab:*' fzf-flags
 
 # This has caused me an entire days worth of headaches
 # This is important to use if I am not using oh-my-zsh

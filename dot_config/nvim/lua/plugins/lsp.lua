@@ -2,6 +2,9 @@ return {
   'neovim/nvim-lspconfig',
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
+
+    marksman = {},
+
     clangd = {},
 
     ts_ls = {},

@@ -15,7 +15,7 @@ return {
       zindex = 1000,
       bo = {},
       wo = {
-        winblend = 50, -- 0 for fully opaque and 100 for fully transparent
+        winblend = 10, -- 0 for fully opaque and 100 for fully transparent
       },
     },
   },

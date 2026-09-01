@@ -11,12 +11,6 @@ keymap('n', '<leader>l', function()
   pcall(lint.try_lint)
 end, { desc = 'Lint file' })
 
--- Signature Help
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = 'rounded',
-  focusable = true,
-})
-
 keymap('n', 'gs', function()
   vim.lsp.buf.signature_help()
 end, opts)

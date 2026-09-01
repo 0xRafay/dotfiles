@@ -3,6 +3,8 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
+    highlights = {
+    },
     colors = {
       onedark_dark = { bg = '#050505' },
     },

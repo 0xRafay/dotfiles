@@ -21,5 +21,6 @@
   "onedarkpro.nvim": { "branch": "main", "commit": "ef009ae60769935a4eced9b3d545ae6013d3d271" },
   "render-markdown.nvim": { "branch": "main", "commit": "4663eb3ecd538bd5062628fb6d95bbe6bdca78f6" },
   "roslyn.nvim": { "branch": "main", "commit": "de9a98d61ed3fd01b5016eea5fe9e32f1a4c7cfb" },
-  "spring-boot.nvim": { "branch": "main", "commit": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" }
+  "spring-boot.nvim": { "branch": "main", "commit": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0" },
+  "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }

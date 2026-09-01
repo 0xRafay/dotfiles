@@ -7,7 +7,7 @@ return {
       width = { min = 40, max = 50 },
       height = { min = 4, max = 20 },
       col = math.huge,
-      row = vim.o.lines - vim.o.cmdheight - 25,
+      -- row = 0.90,
       border = 'rounded',
       padding = { 1, 2 }, -- [top/bottom, right/left]
       title = false,

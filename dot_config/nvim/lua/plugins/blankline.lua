@@ -4,5 +4,14 @@ return {
   main = 'ibl',
   ---@module "ibl"
   ---@type ibl.config
-  opts = {},
+  opts = {
+    indent = {
+      smart_indent_cap = true,
+      char = '┊',
+    },
+    scope = {
+      enabled = true,
+      show_exact_scope = true,
+    },
+  },
 }

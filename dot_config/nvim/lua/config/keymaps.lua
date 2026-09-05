@@ -43,3 +43,48 @@ end, { desc = 'Next error' })
 keymap('n', '[e', function()
   vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
 end, { desc = 'Previous error' })
+
+-- DAP
+keymap('n', '<F5>', function()
+  require('dap').continue()
+end)
+
+keymap('n', '<F10>', function()
+  require('dap').step_over()
+end, { desc = 'Step Over' })
+
+keymap('n', '<F11>', function()
+  require('dap').step_into()
+end, { desc = 'Step Into' })
+
+keymap('n', '<F12>', function()
+  require('dap').step_out()
+end, { desc = 'Step Out' })
+
+keymap('n', '<leader>b', function()
+  require('dap').toggle_breakpoint()
+end, { desc = 'Toggle BreakPoint' })
+
+keymap('n', '<leader>B', function()
+  require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))
+end, { desc = 'Set BreakPoint' })
+
+keymap('n', '<leader>dr', function()
+  require('dap').repl.open()
+end)
+
+keymap('n', '<leader>dl', function()
+  require('dap').run_last()
+end)
+
+keymap('n', '<leader>dx', function()
+  require('dap').terminate()
+end, { desc = 'Terminate Debug' })
+
+keymap('n', '<leader>du', function()
+  require('dapui').toggle()
+end, { desc = 'Toggle Debug UI' })
+
+keymap('n', '<leader>d?', function()
+  require('dapui').eval()
+end, { desc = 'Evaluate expression' })

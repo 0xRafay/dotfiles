@@ -41,12 +41,12 @@ return {
         show_on_insert_on_trigger_character = true,
       },
       window = {
-        border = 'rounded',
+        border = 'single',
       },
     },
 
     completion = {
-      border = 'rounded',
+      border = 'single',
       show_on_backspace = true,
       documentation = { auto_show = false },
       ghost_text = {
@@ -55,7 +55,7 @@ return {
         show_with_selection = true,
       },
       menu = {
-        border = 'rounded',
+        border = 'single',
       },
       scrollbar = false,
       list = {

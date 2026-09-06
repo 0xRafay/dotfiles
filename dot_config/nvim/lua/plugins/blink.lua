@@ -33,11 +33,36 @@ return {
       -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = 'mono',
     },
+    signature = {
+      enabled = true,
+      trigger = {
+        enabled = true,
+        show_on_trigger_character = true,
+        show_on_insert_on_trigger_character = true,
+      },
+      window = {
+        border = 'rounded',
+      },
+    },
 
-    -- (Default) Only show the documentation popup when manually triggered
     completion = {
+      border = 'rounded',
       show_on_backspace = true,
-      documentation = { auto_show = false},
+      documentation = { auto_show = false },
+      ghost_text = {
+        enabled = true,
+        show_without_menu = false,
+        show_with_selection = true,
+      },
+      menu = {
+        border = 'rounded',
+      },
+      scrollbar = false,
+      list = {
+        selection = {
+          preselect = false,
+        },
+      },
     },
 
     -- Default list of enabled providers defined so that you can extend it

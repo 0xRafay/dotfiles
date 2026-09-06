@@ -56,8 +56,8 @@ return {
       },
       menu = {
         border = 'single',
+        scrollbar = false,
       },
-      scrollbar = false,
       list = {
         selection = {
           preselect = false,

@@ -50,8 +50,9 @@ return {
       show_on_backspace = true,
       documentation = { auto_show = false },
       ghost_text = {
-        enabled = true,
+        enabled = false,
         show_without_menu = false,
+        show_with_menu = true,
         show_with_selection = true,
       },
       menu = {
@@ -60,7 +61,7 @@ return {
       },
       list = {
         selection = {
-          preselect = false,
+          preselect = true,
         },
       },
     },

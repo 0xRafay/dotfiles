@@ -46,8 +46,9 @@ return {
     },
 
     completion = {
-      border = 'single',
-      show_on_backspace = true,
+      trigger = {
+        show_on_backspace = true,
+      },
       documentation = { auto_show = false },
       ghost_text = {
         enabled = false,

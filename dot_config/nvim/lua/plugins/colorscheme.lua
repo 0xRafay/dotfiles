@@ -4,6 +4,7 @@ return {
   lazy = false,
   opts = {
     highlights = {
+      MatchParen = { bg = '#F29CFF', fg = '#000000' },
     },
     colors = {
       onedark_dark = { bg = '#050505' },

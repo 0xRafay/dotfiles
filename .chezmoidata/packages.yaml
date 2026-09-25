@@ -41,3 +41,5 @@ packages:
       # WayScriber
       - 'wayscriber'
       - 'wayscriber-configurator'
+      # Key thingie
+      - 'keyd'

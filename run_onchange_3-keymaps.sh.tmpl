@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+cat > /tmp/keyd-default.conf <<'EOF'
+[ids]
+*
+
+[main]
+capslock = esc
+esc = capslock
+EOF
+
+sudo mkdir -p /etc/keyd
+sudo mv /tmp/keyd-default.conf /etc/keyd/default.conf
+sudo systemctl enable --now keyd
+sudo keyd reload

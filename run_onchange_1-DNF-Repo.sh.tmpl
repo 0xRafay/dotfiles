@@ -1,3 +1,5 @@
+{{ if eq .chezmoi.os "Linux" }}
+
 #!/bin/sh
 
 set -e
@@ -65,5 +67,6 @@ gpgkey=https://wayscriber.com/rpm/RPM-GPG-KEY-wayscriber.asc
 EOF
         fi
 
+        {{ end }}
     {{ end }}
 {{ end }}

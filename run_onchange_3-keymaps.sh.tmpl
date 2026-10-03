@@ -1,3 +1,5 @@
+{{ if eq .chezmoi.os "Linux" }}
+
 #!/bin/sh
 
 set -e
@@ -15,3 +17,4 @@ sudo mkdir -p /etc/keyd
 sudo mv /tmp/keyd-default.conf /etc/keyd/default.conf
 sudo systemctl enable --now keyd
 sudo keyd reload
+{{ end }}

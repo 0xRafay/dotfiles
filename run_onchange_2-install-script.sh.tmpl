@@ -1,5 +1,4 @@
-{{ if eq .chezmoi.os "Linux" }}
-
+{{ if eq .chezmoi.os "Linux" -}}
 #!/bin/sh
 
 set -e
@@ -33,4 +32,4 @@ echo ""
         sudo dnf install -y {{ range .packages.fedora.dnf }}{{ . }} {{ end }}
         {{ end -}}
     {{ end -}}
-{{ end }}
+{{ end -}}

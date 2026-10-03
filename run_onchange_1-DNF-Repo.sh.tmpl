@@ -1,5 +1,4 @@
-{{ if eq .chezmoi.os "Linux" }}
-
+{{ if eq .chezmoi.os "Linux" -}}
 #!/bin/sh
 
 set -e
@@ -21,10 +20,10 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-{{ if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.os "linux" -}}
 echo ""
 
-    {{ if eq .chezmoi.osRelease.id "fedora" }}
+    {{ if eq .chezmoi.osRelease.id "fedora" -}}
         echo ""
 
         if ! dnf copr list | grep -q "lihaohong/yazi"; then
@@ -67,6 +66,6 @@ gpgkey=https://wayscriber.com/rpm/RPM-GPG-KEY-wayscriber.asc
 EOF
         fi
 
-        {{ end }}
-    {{ end }}
-{{ end }}
+        {{ end -}}
+    {{ end -}}
+{{ end -}}

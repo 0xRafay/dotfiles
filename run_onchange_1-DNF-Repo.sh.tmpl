@@ -20,7 +20,6 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-{{ if eq .chezmoi.os "linux" -}}
 echo ""
 
     {{ if eq .chezmoi.osRelease.id "fedora" -}}
@@ -65,7 +64,5 @@ repo_gpgcheck=1
 gpgkey=https://wayscriber.com/rpm/RPM-GPG-KEY-wayscriber.asc
 EOF
         fi
-
-        {{ end -}}
-    {{ end -}}
+{{   end -}}
 {{ end -}}

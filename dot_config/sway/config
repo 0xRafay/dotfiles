@@ -61,10 +61,11 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
 # output * bg /usr/share/backgrounds/default.jxl fill
 
-output "HDMI-A-1" {
+output "VGA-1" {
     scale 1
     transform normal
     pos 0 0
+    modeline 72.00 1360 1408 1440 1520 768 771 781 790 -hsync +vsync
 }
 #output VGA-1 modeline 72.00 1360 1408 1440 1520 768 771 781 790 -hsync +vsync
 

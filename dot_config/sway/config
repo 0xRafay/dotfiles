@@ -123,7 +123,7 @@ client.background       #ffffff
     natural_scroll enabled
     middle_emulation enabled
    }
-   input "16700:8195:Dell_Dell_USB_Keyboard" {
+   input type:keyboard {
     xkb_numlock enabled
    }
 #

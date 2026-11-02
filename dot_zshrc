@@ -41,7 +41,7 @@ zinit ice depth=1
 
 zinit light romkatv/powerlevel10k
 
-# ZSH vi-mode
+# ZSH vi mode
 zinit light jeffreytse/zsh-vi-mode
 
 zinit ice wait lucid atload'_zsh_autosuggest_start'
@@ -55,6 +55,13 @@ zinit wait lucid for \
   OMZ::plugins/git/git.plugin.zsh \
   OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
   OMZ::plugins/zoxide/zoxide.plugin.zsh
+
+# zsh vi mode config
+
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+export ZVM_OPEN_URL_CMD='xdg-open'
+
+export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -142,7 +149,6 @@ unsetopt HIST_FIND_NO_DUPS
 unsetopt HIST_IGNORE_ALL_DUPS
 unsetopt HIST_SAVE_NO_DUPS
 
-set -o vi
 # ===== KEYBINDINGS =====
 
 WORDCHARS=''

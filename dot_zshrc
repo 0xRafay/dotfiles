@@ -93,6 +93,9 @@ export PAGER=less # sets $PAGER value
 # Input Prompt
 export GPG_TTY=$(tty)
 
+# Input Timeout
+export KEYTIMEOUT=1  # 10ms
+
 export EDITOR="nvim"
 
 export DEFAULT_TARGET_DIR=~/Screenshots
@@ -139,14 +142,16 @@ unsetopt HIST_FIND_NO_DUPS
 unsetopt HIST_IGNORE_ALL_DUPS
 unsetopt HIST_SAVE_NO_DUPS
 
+# emacs
+# bindkey -e
 set -o vi
 
 # function does nothing
-noop() { : }
+# noop() { : }
 
-zle -N noop
+# zle -N noop
 
-bindkey -M vicmd ':' noop
+# bindkey -M vicmd ':' noop
 
 # ===== KEYBINDINGS =====
 
@@ -161,7 +166,13 @@ bindkey "^[[1;5D" backward-word     # Ctrl+Left
 
 # Editing
 
+# opening in editor
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 bindkey "^H" backward-kill-word     # Ctrl+Backspace
+bindkey -M viins '^?' backward-delete-char
 
 # Tab completion
 # bindkey '^I' complete-word          # Tab

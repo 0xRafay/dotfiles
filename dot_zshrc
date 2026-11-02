@@ -147,11 +147,12 @@ unsetopt HIST_SAVE_NO_DUPS
 set -o vi
 
 # function does nothing
-# noop() { : }
 
-# zle -N noop
+noop() { : }
 
-# bindkey -M vicmd ':' noop
+zle -N noop
+
+bindkey -M vicmd ':' noop
 
 # ===== KEYBINDINGS =====
 
@@ -169,7 +170,7 @@ bindkey "^[[1;5D" backward-word     # Ctrl+Left
 # opening in editor
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey "^X^E" edit-command-line
+bindkey "\\" edit-command-line
 
 bindkey "^H" backward-kill-word     # Ctrl+Backspace
 bindkey -M viins '^?' backward-delete-char

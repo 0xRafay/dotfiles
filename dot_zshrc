@@ -63,6 +63,10 @@ export ZVM_OPEN_URL_CMD='xdg-open'
 
 export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 
+function zvm_after_lazy_keybindings() {
+    zvm_bindkey vicmd ':' forward-char
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

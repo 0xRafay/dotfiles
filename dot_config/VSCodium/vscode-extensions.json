@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "exportedAt": "2026-11-08T11:54:33.243Z",
+    "source": "VSCodium"
+  },
+  "extensions": [
+    {
+      "id": "ms-vscode.vscode-js-profile-table",
+      "version": "1.0.11",
+      "displayName": "Table Visualizer for JavaScript Profiles",
+      "publisher": "ms-vscode",
+      "description": "Text visualizer for profiles taken from the JavaScript debugger"
+    },
+    {
+      "id": "formulahendry.code-runner",
+      "version": "0.12.2",
+      "displayName": "Code Runner",
+      "publisher": "formulahendry",
+      "description": "Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Obj-C, Rust, Racket, Scheme, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim, D, Lisp, Kit, V, SCSS, Sass, CUDA, Less, Fortran, Ring, Standard ML, Zig, Mojo, Erlang, SPWN, Pkl, Gleam"
+    },
+    {
+      "id": "khan.two-monokai",
+      "version": "0.1.3",
+      "displayName": "Two Monokai Theme",
+      "publisher": "khan",
+      "description": "Fork of the One Monokai theme"
+    },
+    {
+      "id": "KylinIdeTeam.cmake-intellisence",
+      "version": "0.8.2",
+      "displayName": "CMake IntelliSense",
+      "publisher": "KylinIdeTeam",
+      "description": "CMake format, completion, go to definition, document link, semantic tokens, and more..."
+    },
+    {
+      "id": "KylinIdeTeam.cppdebug",
+      "version": "0.4.0",
+      "displayName": "C/C++ Debug",
+      "publisher": "KylinIdeTeam",
+      "description": "C/C++ Debugger extension using MIEngine"
+    },
+    {
+      "id": "KylinIdeTeam.kylin-clangd",
+      "version": "0.6.3",
+      "displayName": "Kylin Clangd",
+      "publisher": "KylinIdeTeam",
+      "description": "Fork of vscode-clangd, C/C++ completion, navigation, and insights"
+    },
+    {
+      "id": "KylinIdeTeam.kylin-cmake-tools",
+      "version": "0.5.0",
+      "displayName": "Kylin CMake Workflow",
+      "publisher": "KylinIdeTeam",
+      "description": "CMake workflow for VS Code with clangd-first integration and multi-debugger support"
+    },
+    {
+      "id": "KylinIdeTeam.kylin-cpp-pack",
+      "version": "0.3.0",
+      "displayName": "Extension Pack for C/C++",
+      "publisher": "KylinIdeTeam",
+      "description": "C/C++ Extension Pack"
+    },
+    {
+      "id": "meta.pyrefly",
+      "version": "1.4.1",
+      "displayName": "Pyrefly - Python Language Tooling",
+      "publisher": "meta",
+      "description": "Python autocomplete, typechecking, code navigation and more! Powered by Pyrefly, an open-source language server"
+    },
+    {
+      "id": "ms-python.debugpy",
+      "version": "2026.6.0",
+      "displayName": "Python Debugger",
+      "publisher": "ms-python",
+      "description": "Python Debugger extension using debugpy."
+    },
+    {
+      "id": "ms-python.python",
+      "version": "2026.4.0",
+      "displayName": "Python",
+      "publisher": "ms-python",
+      "description": "Python language support with extension access points for IntelliSense (Pylance), Debugging (Python Debugger), linting, formatting, refactoring, unit tests, and more."
+    },
+    {
+      "id": "ms-python.vscode-python-envs",
+      "version": "1.42.0",
+      "displayName": "Python Environments",
+      "publisher": "ms-python",
+      "description": "Provides a unified python environment experience"
+    },
+    {
+      "id": "premier213.onedark-zed",
+      "version": "1.0.6",
+      "displayName": "OneDark Zed",
+      "publisher": "premier213",
+      "description": "A dark theme inspired by One Dark and Zed."
+    },
+    {
+      "id": "ranjeeth-dev.vscode-extension-manager",
+      "version": "0.0.4",
+      "displayName": "VS Code Extension Manager",
+      "publisher": "ranjeeth-dev",
+      "description": "Export and import VS Code extensions between different installations"
+    },
+    {
+      "id": "redhat.java",
+      "version": "1.58.0",
+      "displayName": "Language Support for Java(TM) by Red Hat",
+      "publisher": "redhat",
+      "description": "Java Linting, Intellisense, formatting, refactoring, Maven/Gradle support and more..."
+    },
+    {
+      "id": "vadimcn.vscode-lldb",
+      "version": "1.12.3",
+      "displayName": "CodeLLDB",
+      "publisher": "vadimcn",
+      "description": "Debugger for native code, powered by LLDB. Debug C++, Rust, and other compiled languages."
+    },
+    {
+      "id": "vscodevim.vim",
+      "version": "1.32.4",
+      "displayName": "Vim",
+      "publisher": "vscodevim",
+      "description": "Vim emulation for Visual Studio Code"
+    },
+    {
+      "id": "zokugun.cron-tasks",
+      "version": "0.2.1",
+      "displayName": "Cron Tasks",
+      "publisher": "zokugun",
+      "description": "Easily schedule your tasks"
+    },
+    {
+      "id": "zokugun.sync-settings",
+      "version": "0.21.2",
+      "displayName": "Sync Settings",
+      "publisher": "zokugun",
+      "description": "Easily synchronize your settings"
+    }
+  ],
+  "settings": {
+    "redhat.telemetry.enabled": false,
+    "editor.fontSize": 16,
+    "intellij.region": "europe",
+    "intellij.dataSharing": "none",
+    "editor.defaultFormatter": "JetBrains.intellij-server",
+    "editor.fontFamily": "Jetbrains, 'JetbrainsMono Nerd Font', monospace",
+    "editor.minimap.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "workbench.sideBar.location": "right",
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.inlayHints": {
+      "variableTypes": false,
+      "callArgumentNames": "off"
+    },
+    "python.analysis.showHoverGoToLinks": false,
+    "python.languageServer": "Default",
+    "window.commandCenter": false,
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.smartRelativeLine": true,
+    "vim.useSystemClipboard": true,
+    "code-runner.runInTerminal": true,
+    "clangd.formatting.clangFormatPath": "C:/tools/msys64/ucrt64/bin/clang-format.exe",
+    "cmake.generator": "Ninja",
+    "cmake.configureSettings": {
+      "CMAKE_MAKE_PROGRAM": "C:/tools/msys64/ucrt64/bin//ninja.exe"
+    },
+    "clangd.preferBundledClangd": false,
+    "clangd.path": "C:/tools/msys64/ucrt64/bin/clangd.exe",
+    "clangd.formatting.preferBundledClangFormat": false,
+    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "Two Monokai Darker",
+    "editor.inlayHints.enabled": "offUnlessPressed"
+  }
+}

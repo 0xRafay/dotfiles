@@ -1,0 +1,37 @@
+{
+    "redhat.telemetry.enabled": false,
+    "editor.fontSize": 16,
+    "intellij.region": "europe",
+    "intellij.dataSharing": "none",
+    "editor.defaultFormatter": "JetBrains.intellij-server",
+    "editor.fontFamily": "Jetbrains, 'JetbrainsMono Nerd Font', monospace",
+    "editor.minimap.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "workbench.sideBar.location": "right",
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.inlayHints": {
+        "variableTypes": false,
+        "callArgumentNames": "off",
+    },
+    "python.analysis.showHoverGoToLinks": false,
+    "python.languageServer": "Default",
+    "window.commandCenter": false,
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.smartRelativeLine": true,
+    "vim.useSystemClipboard": true,
+
+    "code-runner.runInTerminal": true,
+
+    "clangd.formatting.clangFormatPath": "C:/tools/msys64/ucrt64/bin/clang-format.exe",
+    "cmake.generator": "Ninja",
+    "cmake.configureSettings": {
+        "CMAKE_MAKE_PROGRAM": "C:/tools/msys64/ucrt64/bin//ninja.exe",
+    },
+    "clangd.preferBundledClangd": false,
+    "clangd.path": "C:/tools/msys64/ucrt64/bin/clangd.exe",
+    "clangd.formatting.preferBundledClangFormat": false,
+    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "Two Monokai Darker",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+}
